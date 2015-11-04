@@ -1,0 +1,19 @@
+{
+  "name": "exmaple",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "textlint": "grunt textlint",
+    "test": "npm i && npm run textlint"
+  },
+  "author": "nakajmg",
+  "license": "MIT",
+  "dependencies": {
+    "grunt-textlint": "file:..",
+    "textlint-rule-no-todo": "^1.0.3",
+    "textlint-rule-prh": "^2.2.0"
+  },
+  "peerDependencies": {
+    "grunt": "^0.4.5"
+  }
+}

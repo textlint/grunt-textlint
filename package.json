@@ -1,0 +1,21 @@
+{
+  "name": "grunt-textlint",
+  "version": "0.0.1",
+  "description": "Grunt plugin for textlint.",
+  "author": {
+    "name": "nakajmg"
+  },
+  "repository": "",
+  "lincenses": "MIT",
+  "keywords": [
+    "gruntplugin"
+  ],
+  "scripts": {
+    "test": "cd example && npm test"
+  },
+  "dependencies": {
+    "textlint": "^4.7.5",
+    "through2": "^2.0.0",
+    "vinyl-fs": "^2.2.1"
+  }
+}

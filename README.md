@@ -6,6 +6,12 @@ Grunt plugin for [textlint](https://github.com/textlint/textlint).
 * Require [rules](https://github.com/azu/textlint#rule-list---collection-of-textlint-rule)
   * As you can use [vvakame/prh](https://github.com/vvakame/prh)'s format dictionary.
 
+## Installation
+
+```
+npm install grunt-textlint
+```
+
 ## Usage
 
 ```js

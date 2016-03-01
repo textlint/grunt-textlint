@@ -1,6 +1,6 @@
 {
   "name": "grunt-textlint",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Grunt plugin for textlint.",
   "author": {
     "name": "nakajmg"
@@ -14,8 +14,8 @@
     "test": "cd example && npm test"
   },
   "dependencies": {
-    "textlint": "^4.7.5",
-    "through2": "^2.0.0",
-    "vinyl-fs": "^2.2.1"
+    "textlint": "^5.4.1",
+    "through2": "^2.0.1",
+    "vinyl-fs": "^2.3.4"
   }
 }

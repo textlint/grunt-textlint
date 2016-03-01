@@ -1,32 +1,44 @@
 var vfs = require('vinyl-fs');
 var through = require('through2');
-var TextLintEngine = require('textlint').TextLintEngine;
+var Engine = require('textlint').TextLintEngine;
 
 module.exports = function(grunt) {
   grunt.registerTask('textlint', function() {
 
-    function lint(options) {
-      var textlint = new TextLintEngine(options);
+    function textlint(options) {
+      var engine = new Engine(options);
       var filePaths = [];
-
+      
       return through.obj(function(file, enc, cb) {
         filePaths.push(file.path);
         this.push(file);
         cb();
       }, function(cb) {
-        var results;
+        var _this = this;
+        
         try {
-          results = textlint.executeOnFiles(filePaths);
-          if (textlint.isErrorResults(results)) {
-            grunt.log.writeln(textlint.formatResults(results));
-          }
+          engine.executeOnFiles(filePaths).then(function(results) {
+            
+            grunt.log.writeln('[textlint] These files were linted');
+            results.forEach(function(result) {
+              grunt.log.writeln('  ' + result.filePath);
+            });
+            
+            if (engine.isErrorResults(results)) {
+              grunt.log.writeln(engine.formatResults(results));
+            }
+            else{
+              grunt.log.writeln('[textlint] No error');
+            }
+            
+            _this.emit('end');
+            cb();  
+          });
         }
         catch(e) {
-          this.emit('error', grunt.log.warn("error"));
+          grunt.fail.warn("Failed execute grunt-textlint");
           cb();
         }
-        this.emit("end");
-        cb();
       });
     }
 
@@ -34,8 +46,7 @@ module.exports = function(grunt) {
     var options = config.options || {};
 
     vfs.src(config.src)
-      .pipe(lint(options))
+      .pipe(textlint(options))
       .on('end', this.async());
   });
 };
-

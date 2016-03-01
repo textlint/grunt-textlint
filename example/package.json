@@ -11,7 +11,7 @@
   "dependencies": {
     "grunt-textlint": "file:..",
     "textlint-rule-no-todo": "^1.0.3",
-    "textlint-rule-prh": "^2.2.0"
+    "textlint-rule-prh": "^2.3.0"
   },
   "peerDependencies": {
     "grunt": "^0.4.5"

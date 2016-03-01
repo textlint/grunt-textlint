@@ -20,3 +20,5 @@ module.exports = function() {
   grunt.loadNpmTasks('grunt-textlint');
 };
 ```
+
+See [example](https://github.com/textlint/grunt-textlint/tree/master/example)

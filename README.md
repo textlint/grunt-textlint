@@ -1,5 +1,7 @@
 # grunt-textlint
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/textlint/grunt-textlint.svg)](https://greenkeeper.io/)
+
 Grunt plugin for [textlint](https://github.com/textlint/textlint).
 
 * Require [.textlintrc](https://github.com/azu/textlint#textlintrc)
